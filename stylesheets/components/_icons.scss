@@ -1,0 +1,12 @@
+@use '../abstracts/' as *;
+
+.social-link {
+  display: inline-block;
+
+  @include onHover() {
+    cursor: pointer;
+
+    filter: saturate(100%) brightness(0) invert(92%) sepia(7%) saturate(2695%)
+      hue-rotate(313deg) brightness(93%) contrast(77%);
+  }
+}

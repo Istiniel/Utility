@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass placeholders.
+// -----------------------------------------------------------------------------
+
+%transition {
+  transition: all ease-in-out 0.3s;
+}
+
+%flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+// Example
+// div {
+//   @extend %transition;
+// }

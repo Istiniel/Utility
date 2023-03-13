@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+.wrapper {
+  max-width: $max-width;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include maxQ(small) {
+    padding: 0 10px;
+  }
+}
+
+// use for bold text accent
+.span-bold {
+  font-weight: 700;
+}
+
+//input styles
+.invalid {
+  outline: 2px solid rgb(255, 80, 49) !important;
+  outline-offset: -2px;
+}

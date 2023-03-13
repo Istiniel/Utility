@@ -1,0 +1,34 @@
+@use '../abstracts/' as *;
+
+.nav {
+  font-family: $font-sans;
+  @include font(1.4rem, 1.6rem, 400);
+  text-transform: capitalize;
+
+  @include maxQ(medium) {
+    display: none;
+  }
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__item {
+  display: block;
+
+  @extend %transition;
+
+  @include onHover() {
+    cursor: pointer;
+    background-color: $primary-gray;
+    color: $primary-white;
+  }
+}
+
+.nav__link {
+  display: block;
+  padding: 3.45rem;
+
+  scroll-behavior: smooth;
+}

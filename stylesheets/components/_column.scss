@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.column__title {
+  margin-bottom: 1.3rem;
+  white-space: nowrap;
+
+  color: #ffffff;
+  font-family: $font-sans;
+  @include font(1.4rem, 1.6rem, 400);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.column__link {
+  margin-top: 1.2rem;
+  cursor: pointer;
+  color: rgb(255, 255, 255, 0.75);
+  font-family: $font-sans;
+  @include font(1.2rem, 1.4rem, 400);
+  white-space: nowrap;
+
+  &:hover,
+  &:active {
+    color: $primary-red;
+  }
+}

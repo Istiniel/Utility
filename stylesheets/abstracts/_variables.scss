@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// fonts
+$font-serif: Arial, 'Helvetica Neue Light', sans-serif !default;
+$font-sans: Georgia, 'Times New Roman', Times, serif !default;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+
+// Colors
+$primary-color-1: #d4f4ff;
+$primary-color-2: #7271aa;
+$primary-color-3: #7271aa;
+$accent-color-1: #334a52;
+$accent-color-2: #e6f4f1;
+$accent-color-3: #e6f4f1;
+// Explicitly set colors
+$primary-black: #1b1a17;
+$primary-gray: #555248;
+$primary-red: #d4b098;
+$primary-white: #eae3d4;
+$primary-green: #e6f4f1;
+$accent-green: #66c05d;
+
+//breakpoints
+$break-xs: 320px;
+$break-sm: 768px;
+$break-md: 1024px;
+$break-lg: 1280px;
+$break-xl: 1600px;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+//variables for button component
+$button-green: #66c05d;
+$button-gray: #555248;
+$button-red: #d4b098;
+$button-white: #ffffff;
