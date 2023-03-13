@@ -1,124 +1,62 @@
 @use '../abstracts/' as *;
 
 button {
-  background-color: tomtato;
-  border-radius: 0rem;
+  border-radius: 10rem;
 
-  padding: 1.6rem 2.8rem;
+  padding: 1.5rem 4.5rem;
   max-width: fit-content;
 
-  font-family: $font-sans;
-  @include font(1.2rem, 1.4rem, 500);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-family: $font-serif;
+  @include font(1.7rem, 130%, 400);
+  letter-spacing: 0.06em;
 
-  @extend %transition;
-}
+  transition: all ease-out 0.2s;
 
-// green
-.green {
-  background-color: $button-green;
-  box-shadow: inset 0px 0px 0px 2px $button-green;
-
-  color: #ffffff;
-
-  @mixin onHover() {
-    background-color: #6dd862;
-    box-shadow: inset 0px 0px 0px 2px #6dd862;
-
-    color: #ffffff;
-  }
-}
-
-.green.outlined {
-  background-color: transparent;
-  color: $primary-black;
-
-  @mixin onHover() {
-    background-color: $button-green !important;
-    box-shadow: inset 0px 0px 0px 2px $button-green !important;
-
-    color: #ffffff;
+  @include onHover() {
+    box-shadow: 0px 3px 8px 0px rgba(34, 60, 80, 0.2);
   }
 }
 
 //red
 .red {
   background-color: $button-red;
-  box-shadow: inset 0px 0px 0px 2px $button-red;
+  color: $primary-black;
 
-  color: #ffffff;
-
-  @mixin onHover() {
-    background-color: $button-gray;
-    box-shadow: inset 0px 0px 0px 2px $button-gray;
-
-    color: #ffffff;
+  @include onHover() {
+    filter: brightness(1.035);
   }
 }
 
 .red.outlined {
-  background-color: transparent;
-  color: $primary-black;
+  background-color: rgba(0, 0, 0, 0);
+  outline: 2px solid $button-red;
+  outline-offset: -2px;
+  filter: none;
 
-  @mixin onHover() {
-    background-color: $button-red !important;
-    box-shadow: inset 0px 0px 0px 2px $button-red !important;
-
-    color: #ffffff;
+  @include onHover() {
+    outline-color: transparent;
+    background-color: $button-red;
   }
 }
 
 //gray
 .gray {
   background-color: $button-gray;
-  box-shadow: inset 0px 0px 0px 2px $button-gray;
+  color: $primary-black;
 
-  color: #ffffff;
-
-  @mixin onHover() {
-    background-color: $button-red;
-    box-shadow: inset 0px 0px 0px 2px $button-red;
-
-    color: #ffffff;
+  @include onHover() {
+    filter: brightness(1.035);
   }
 }
 
 .gray.outlined {
-  background-color: transparent;
-  color: $primary-black;
+  background-color: rgba(0, 0, 0, 0);
+  outline: 2px solid $button-gray;
+  outline-offset: -2px;
+  filter: none;
 
-  @mixin onHover() {
-    background-color: $button-gray !important;
-    box-shadow: inset 0px 0px 0px 2px $button-gray !important;
-
-    color: #ffffff;
-  }
-}
-
-//white
-.white {
-  background-color: $button-white;
-  box-shadow: inset 0px 0px 0px 2px $button-white;
-
-  color: #ffffff;
-
-  @mixin onHover() {
-    background-color: $button-red;
-    box-shadow: inset 0px 0px 0px 2px $button-red;
-
-    color: #ffffff;
-  }
-}
-
-.white.outlined {
-  background-color: transparent;
-  color: $button-white;
-
-  @mixin onHover() {
-    background-color: #474747 !important;
-    box-shadow: inset 0px 0px 0px 2px $button-white !important;
-
-    color: #ffffff;
+  @include onHover() {
+    outline-color: transparent;
+    background-color: $button-gray;
   }
 }
