@@ -52,6 +52,13 @@ aside {
   display: block;
 }
 
+// make scrollbar out of content
+
+body {
+  // overflow-y: scroll;
+  overflow-y: overlay;
+}
+
 // Setting to default
 html,
 body {

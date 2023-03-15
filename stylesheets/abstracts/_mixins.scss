@@ -17,18 +17,10 @@
 }
 
 // Font-styles
-@mixin font(
-  $size,
-  $height: $size,
-  $weight: 400,
-  $spacing: 0px,
-  $style: normal
-) {
+@mixin font($size, $height: $size, $weight: 400) {
   font-weight: $weight;
   font-size: $size;
   line-height: $height;
-  font-style: $style;
-  letter-spacing: $spacing;
 }
 
 // flex $basis-divided container
