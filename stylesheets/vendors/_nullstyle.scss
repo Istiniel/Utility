@@ -38,6 +38,15 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+// remove blue highlight for a, button etc
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 // Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed
 ul,
 ol {

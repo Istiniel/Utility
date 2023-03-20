@@ -60,3 +60,13 @@ button {
     background-color: $button-gray;
   }
 }
+
+// if disabled
+button:disabled {
+  color: #cdcdcd !important;
+  outline-color: #cdcdcd !important;
+
+  cursor: auto;
+  user-select: none;
+  pointer-events: none;
+}

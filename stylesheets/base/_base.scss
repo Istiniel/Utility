@@ -23,3 +23,16 @@
   outline: 2px solid rgb(255, 80, 49) !important;
   outline-offset: -2px;
 }
+
+::-webkit-scrollbar {
+  background-color: rgb(194, 194, 194);
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary-darkgray2;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
