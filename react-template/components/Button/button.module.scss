@@ -1,0 +1,72 @@
+@use '../abstracts/' as *;
+
+button {
+  border-radius: 10rem;
+
+  padding: 1.5rem 4.5rem;
+  max-width: fit-content;
+
+  font-family: $font-serif;
+  @include font(1.7rem, 130%, 400);
+  letter-spacing: 0.06em;
+
+  transition: all ease-out 0.2s;
+
+  @include onHover() {
+    box-shadow: 0px 3px 8px 0px rgba(34, 60, 80, 0.2);
+  }
+}
+
+//red
+.red {
+  background-color: $button-red;
+  color: $primary-black;
+
+  @include onHover() {
+    filter: brightness(1.035);
+  }
+}
+
+.red.outlined {
+  background-color: rgba(0, 0, 0, 0);
+  outline: 2px solid $button-red;
+  outline-offset: -2px;
+  filter: none;
+
+  @include onHover() {
+    outline-color: transparent;
+    background-color: $button-red;
+  }
+}
+
+//gray
+.gray {
+  background-color: $button-gray;
+  color: $primary-black;
+
+  @include onHover() {
+    filter: brightness(1.035);
+  }
+}
+
+.gray.outlined {
+  background-color: rgba(0, 0, 0, 0);
+  outline: 2px solid $button-gray;
+  outline-offset: -2px;
+  filter: none;
+
+  @include onHover() {
+    outline-color: transparent;
+    background-color: $button-gray;
+  }
+}
+
+// if disabled
+button:disabled {
+  color: #cdcdcd !important;
+  outline-color: #cdcdcd !important;
+
+  cursor: auto;
+  user-select: none;
+  pointer-events: none;
+}

@@ -1,0 +1,105 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @param {Bool} $self [false] - Whether or not to include current selector
+@mixin onHover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  &:active {
+    @content;
+  }
+}
+
+// Font-styles
+@mixin font($size, $height: $size, $weight: 400) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+// flex $basis-divided container
+@mixin flex-columns($basis: 33%) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > * {
+    flex-basis: $basis;
+  }
+}
+
+/// Make a context based selector a little more friendly
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+// Example
+// div::after {
+//   @include pseudo;
+//   top: -1rem; left: -1rem;
+//   width: 1rem; height: 1rem;
+// }
+
+/// CSS triangles
+@mixin css-triangle(
+  $color,
+  $direction,
+  $size: 6px,
+  $position: absolute,
+  $round: false
+) {
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+    border-radius: 3px;
+  }
+  @if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: 0 - round($size / 2.5);
+  } @else if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round($size / 2.5);
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
+}
+
+/// Event wrapper
+// @param {Bool} $self [false] - Whether or not to include current selector
+// @mixin onHover($self: false) {
+//   @if $self {
+//     &,
+//     &:hover,
+//     &:active,
+//     &:focus,
+//     &:focus-within {
+//       @content;
+//     }
+//   } @else {
+//     &:hover,
+//     &:active,
+//     &:focus,
+//     &:focus-within {
+//       @content;
+//     }
+//   }
+// }
