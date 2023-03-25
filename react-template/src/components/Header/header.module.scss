@@ -1,0 +1,21 @@
+.header {
+  background-color: $primary-black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include maxQ(small) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: column;
+  }
+}

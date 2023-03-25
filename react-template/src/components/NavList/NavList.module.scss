@@ -1,0 +1,9 @@
+.navList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include maxQ(small) {
+    flex-direction: column;
+  }
+}

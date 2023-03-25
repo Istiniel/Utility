@@ -1,0 +1,19 @@
+.logo {
+  padding-bottom: 0.5rem;
+  color: $primary-red;
+  font-family: $font-sans;
+  @include font(4rem, 100%, 500);
+  letter-spacing: 0.03em;
+  font-style: italic;
+
+  border-bottom: 2px solid $primary-red;
+
+  @include onHover() {
+    cursor: pointer;
+    filter: brightness(10);
+  }
+
+  @include maxQ(small) {
+    margin: 2rem 0;
+  }
+}

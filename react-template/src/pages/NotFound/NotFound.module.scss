@@ -1,0 +1,17 @@
+.main {
+  min-height: 100vh;
+  background-color: $primary-red;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nomatches__title {
+  margin-top: 5rem;
+  color: $primary-black;
+  font-family: $font-serif;
+  @include font(2.5rem, 140%, 500);
+}

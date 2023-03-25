@@ -1,0 +1,43 @@
+.navItem {
+  @extend %transition;
+
+  @include onHover() {
+    background-color: $primary-red;
+    cursor: pointer;
+
+    .navLink {
+      color: $primary-black;
+    }
+  }
+
+  @include maxQ(small) {
+    @include onHover() {
+      background-color: transparent;
+      .navLink {
+        color: $primary-white;
+      }
+    }
+  }
+}
+
+.navLink {
+  display: inline-block;
+  padding: 3rem 4rem;
+
+  color: $primary-red;
+  font-family: $font-serif;
+  @include font(2.5rem, 140%, 400);
+  letter-spacing: 0.06em;
+
+  @include maxQ(medium) {
+    font-size: 1.5rem;
+  }
+
+  @include maxQ(small) {
+    flex: 1 0 auto;
+  }
+}
+
+.navLink.active {
+  text-decoration: underline;
+}

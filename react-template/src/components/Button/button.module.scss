@@ -1,6 +1,5 @@
-@use '../abstracts/' as *;
-
 button {
+  width: 15rem;
   border-radius: 10rem;
 
   padding: 1.5rem 4.5rem;
@@ -58,6 +57,32 @@ button {
   @include onHover() {
     outline-color: transparent;
     background-color: $button-gray;
+  }
+}
+
+//gray
+.black {
+  background-color: $primary-black;
+  color: $primary-white;
+
+  @include onHover() {
+    color: $primary-white;
+    background-color: $primary-gray;
+  }
+}
+
+.black.outlined {
+  background-color: rgba(0, 0, 0, 0);
+  outline: 2px solid $primary-black;
+  outline-offset: -2px;
+  filter: none;
+
+  color: $primary-black;
+
+  @include onHover() {
+    outline-color: transparent;
+    color: $primary-white;
+    background-color: $primary-gray;
   }
 }
 

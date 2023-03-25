@@ -1,0 +1,69 @@
+@use '../abstracts/' as *;
+
+.dropDown__title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: $primary-color-1;
+  width: 200px;
+  min-height: 3.6rem;
+  padding: 0 1.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  font-family: $font-primary;
+  color: $accent-color-1;
+  @include font(1.2rem, 80%, $font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  vertical-align: middle;
+
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+  @extend %transition;
+
+  &:hover,
+  &:active,
+  &:focus-within {
+    filter: brightness(1.09);
+  }
+}
+
+.dropDown__options {
+  position: absolute;
+  z-index: 100;
+  padding: 0.8rem 0;
+  background-color: rgb(247, 247, 247);
+  border-radius: 0.3rem;
+
+  @extend %transition;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+
+  & > li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgb(247, 247, 247);
+    width: 200px;
+    min-height: 3.6rem;
+    padding: 0 1.5rem;
+
+    cursor: pointer;
+
+    font-family: $font-primary;
+    color: $accent-color-1;
+    @include font(1.2rem, 80%, $font-weight-semibold);
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    vertical-align: middle;
+
+    &:hover,
+    &:active {
+      filter: brightness(0.8);
+    }
+  }
+}

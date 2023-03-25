@@ -1,0 +1,28 @@
+.main {
+  min-height: 100vh;
+  background-color: $primary-red;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__title {
+  margin-top: 5rem;
+  color: $primary-black;
+  font-family: $font-serif;
+  @include font(2.5rem, 140%, 500);
+}
+
+.about__description {
+  margin-top: 1rem;
+  color: $primary-black;
+  font-family: $font-serif;
+  @include font(1.5rem, 140%, 400);
+  text-align: justify;
+}
