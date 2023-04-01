@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.page {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+
+  font-family: $font-sans;
+  color: $primary-darkgray;
+
+  @include font(1.4rem, 130%, 500);
+}
+
+.active {
+  &:after {
+    z-index: -1;
+    position: absolute;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+    right: 50%;
+    content: '';
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100rem;
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+  }
+}
