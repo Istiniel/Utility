@@ -1,0 +1,75 @@
+.dropDown {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 25rem;
+}
+
+.dropDown__title {
+  background-color: $accent-purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+
+  font-family: $font-sans;
+  color: #ffffff;
+  @include font(1.6rem, 130%, $font-weight-semibold);
+  letter-spacing: 0.1rem;
+  vertical-align: middle;
+
+  @extend %transition;
+
+  @include onHover() {
+    cursor: pointer;
+    filter: brightness(1.09);
+  }
+}
+
+.dropDown__title.opened {
+  background-color: #7e798f;
+}
+
+.arrowDown {
+  width: 2rem;
+  height: 2rem;
+  transition: transform ease-in-out 0s;
+}
+
+.arrowDown.opened {
+  animation: 0s ease-in-out open;
+  transform: rotate(180deg);
+}
+
+@keyframes open {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.dropDown__contentWrapper {
+  position: absolute;
+  z-index: 2;
+  min-width: 100%;
+  padding-top: 0.4rem;
+
+  bottom: 0;
+  transform: translateY(calc(100%));
+
+  @extend %transition;
+}
+
+.dropDown__content {
+  background-color: $accent-purple;
+  padding: 1.6rem 1.6rem;
+  border-radius: 0.5rem;
+
+  @extend %transition;
+}

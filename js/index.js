@@ -1044,3 +1044,11 @@ console.log(JSON.stringify(user111));
 console.log(JSON.stringify(user22));
 
 console.log(user111.address === user22.address);
+
+function isPrime(n) {
+  if (n <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}

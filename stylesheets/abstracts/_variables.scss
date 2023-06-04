@@ -5,9 +5,53 @@
 // fonts
 $font-serif: Arial, 'Helvetica Neue Light', sans-serif !default;
 $font-sans: Georgia, 'Times New Roman', Times, serif !default;
+
 $font-weight-normal: 400;
-$font-weight-semibold: 500;
+$font-weight-semibold: 600;
 $font-weight-bold: 700;
+
+$font-size-code: 14px;
+$font-size-base: 16px;
+$font-size-medium: 20px;
+$font-size-heading: 28px;
+
+$b-radius: 5px;
+
+// // Colors
+// $light-gradient: #c4cfee;
+// $dark-gradient: #594860;
+// $c-light-blue: #a5abbd;
+// $c-black: #414756;
+// $c-blue: #cedbff;
+// $c-dark-gray: #4d4351;
+// $c-gray: #b3a7b7;
+// $c-beige: #e5cdc2;
+// $c-control-text: #414756;
+// $c-final-contrast: #cedbff;
+
+// :root {
+//   --light-gradient: #{$light-gradient};
+//   --dark-gradient: #{$dark-gradient};
+//   --c-light-blue: #{$c-light-blue};
+//   --c-black: #{$c-black};
+//   --c-blue: #{$c-blue};
+//   --c-dark-gray: #{$c-dark-gray};
+//   --c-gray: #{$c-gray};
+//   --c-beige: #{$c-beige};
+//   --c-control-text: #{$c-control-text};
+//   --c-final-contrast: #{$c-final-contrast};
+// }
+
+// body.dark {
+//   --light-gradient: #141539;
+//   --c-light-blue: #505194;
+//   --c-black: #adafe2;
+//   --c-blue: #1d1f53;
+//   --c-dark-gray: #383b9f;
+//   --c-gray: #4e52df;
+//   --c-beige: #4e52df;
+//   --c-control-text: #383b9f;
+// }
 
 // Colors
 $primary-color-1: #d4f4ff;
@@ -23,6 +67,19 @@ $primary-red: #d4b098;
 $primary-white: #eae3d4;
 $primary-green: #e6f4f1;
 $accent-green: #66c05d;
+// Colors
+$c-white: #ffff;
+$c-gray: #c9d0d4;
+$c-pink: #f0b4d8;
+$c-orange: rgb(255, 80, 49);
+$c-green: #66c05d;
+$c-dark-gray: #22222c;
+$c-bright-purple: #4c37d9;
+$c-dark-blue: #2c295e;
+$c-almost-black: #171721;
+$c-black: #0b141c;
+$c-dark-transparent: #1717216e;
+$c-white-transparent: rgba(255, 255, 255, 0.4);
 
 //breakpoints
 $break-xs: 320px;
@@ -34,6 +91,10 @@ $break-xl: 1600px;
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
+
+//transition
+$fast-transition: all 0.2s ease-in-out;
+$slow-transition: all 0.4s ease-in-out;
 
 //variables for button component
 $button-green: #66c05d;

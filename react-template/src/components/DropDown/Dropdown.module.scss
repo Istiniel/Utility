@@ -1,32 +1,27 @@
-.dropDown__title {
-  margin-top: 0.2rem;
+.dropDown {
   position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 25rem;
+}
+
+.dropDown__title {
+  background-color: $accent-purple;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  width: 15rem;
-  min-height: 3.6rem;
-  padding: 0 1.5rem;
-  border-radius: 0.3rem;
+  width: 100%;
+  height: 5.6rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
 
   font-family: $font-sans;
-  color: $primary-black;
-  @include font(1.2rem, 80%, $font-weight-semibold);
+  color: #ffffff;
+  @include font(1.6rem, 130%, $font-weight-semibold);
   letter-spacing: 0.1rem;
   vertical-align: middle;
 
   @extend %transition;
-
-  &:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    transform: translateY(10%);
-
-    border: 0.4rem solid transparent;
-    border-top: 0.8rem solid $primary-darkgray;
-  }
 
   @include onHover() {
     cursor: pointer;
@@ -34,29 +29,63 @@
   }
 }
 
-.dropDown__options {
+.dropDown__title.opened {
+  background-color: #7e798f;
+}
+
+.arrowDown {
+  width: 2rem;
+  height: 2rem;
+  transition: transform ease-in-out 0s;
+}
+
+.arrowDown.opened {
+  animation: 0s ease-in-out open;
+  transform: rotate(180deg);
+}
+
+@keyframes open {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.dropDown__contentWrapper {
   position: absolute;
-  z-index: 100;
-  padding: 0.8rem 0;
-  background-color: rgb(247, 247, 247);
-  border-radius: 0.3rem;
+  z-index: 2;
+  min-width: 100%;
+  padding-top: 0.4rem;
+
+  bottom: 0;
+  transform: translateY(calc(100%));
 
   @extend %transition;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
+}
 
+.dropDown__content {
+  background-color: $accent-purple;
+  padding: 0.8rem 0;
+  border-radius: 0.5rem;
+
+  @extend %transition;
+}
+
+.dropDown__options {
   & > li {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
-    background-color: rgb(247, 247, 247);
     width: 200px;
     min-height: 3.6rem;
     padding: 0 1.5rem;
 
     font-family: $font-sans;
-    color: $primary-black;
+    color: #ffffff;
     @include font(1.2rem, 80%, $font-weight-semibold);
     text-transform: capitalize;
     letter-spacing: 0.1rem;

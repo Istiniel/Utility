@@ -1,23 +1,22 @@
 import React, { useEffect } from 'react';
 
-export const useToggleDropDown = (
+export function useToggleDropDown<T extends HTMLElement>(
   isOpen: boolean,
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
-  dropContent: React.RefObject<HTMLDivElement>,
-  setSelectedOption: React.Dispatch<React.SetStateAction<string>>
-) => {
+  dropContent: React.RefObject<T>
+) {
   useEffect(() => {
     document.addEventListener('click', (e) => {
-      if (!dropContent.current?.contains(e.target as Node)) {
+      if (!dropContent.current?.contains(e.target as T)) {
         setIsOpen(false);
       }
     });
     return () => {
       document.removeEventListener('click', (e) => {
-        if (!dropContent.current?.contains(e.target as Node)) setIsOpen(false);
+        if (!dropContent.current?.contains(e.target as T)) setIsOpen(false);
       });
     };
-  }, [isOpen, setIsOpen, dropContent, setSelectedOption]);
+  }, [isOpen, setIsOpen, dropContent]);
 
   const dropDownFocusOn = () => {
     setIsOpen(true);
@@ -30,4 +29,4 @@ export const useToggleDropDown = (
   };
 
   return [dropDownFocusOn, dropDownFocusOff, dropDownToggle];
-};
+}

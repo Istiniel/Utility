@@ -47,13 +47,7 @@
 // }
 
 /// CSS triangles
-@mixin css-triangle(
-  $color,
-  $direction,
-  $size: 6px,
-  $position: absolute,
-  $round: false
-) {
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
   @include pseudo($pos: $position);
   width: 0;
   height: 0;
@@ -83,23 +77,56 @@
   }
 }
 
-/// Event wrapper
-// @param {Bool} $self [false] - Whether or not to include current selector
-// @mixin onHover($self: false) {
-//   @if $self {
-//     &,
-//     &:hover,
-//     &:active,
-//     &:focus,
-//     &:focus-within {
-//       @content;
-//     }
-//   } @else {
-//     &:hover,
-//     &:active,
-//     &:focus,
-//     &:focus-within {
-//       @content;
-//     }
-//   }
-// }
+@mixin glass-effect($color: $c-dark-transparent, $blur: 14px) {
+  background-color: $color;
+  backdrop-filter: blur($blur);
+}
+
+$font-weights: (
+  'top': top,
+  'left': left,
+  'right': right,
+  'bottom': bottom,
+);
+
+@mixin animation-slide(
+  $direction: top,
+  $start: -100px,
+  $name: slide-#{$direction},
+  $end: 0,
+  $delay: 0
+) {
+  animation: $name 0.5s ease-in-out 0s 1 normal forwards;
+  animation-delay: $delay;
+  opacity: 0;
+  position: relative;
+  #{$direction}: $start;
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+      #{$direction}: $start;
+    }
+    100% {
+      opacity: 1;
+      #{$direction}: $end;
+    }
+  }
+}
+
+@mixin bottomline_expand($color: white) {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: $color;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}

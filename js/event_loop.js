@@ -22,6 +22,17 @@ Promise.resolve().then(() => console.log(5));
 // - содержимое очереди микрозадач:
 //  `console.log(3); setTimeout(...4); console.log(5)`
 
+async function test() {
+  const test = await Promise.resolve().then(() =>
+    setTimeout(() => console.log(8))
+  );
+  // В очередь микрозадач ставится колбэк, выводящий `5`
+  // - содержимое очереди микрозадач:
+  //  `console.log(3); setTimeout(...4); console.log(5); setTimeout(...8);`
+}
+
+test();
+
 setTimeout(() => console.log(6));
 // `setTimeout` ставит переданный колбэк в очередь макрозадач
 // - содержимое очереди макрозадач:

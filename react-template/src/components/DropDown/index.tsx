@@ -2,9 +2,11 @@ import React, { useState, useRef } from 'react';
 import st from './Dropdown.module.scss';
 import { useToggleDropDown } from '../../hooks/useToggleDropDown';
 
+import { BsChevronCompactDown } from 'react-icons/bs';
+
 interface DropDownProps {
   type: 'hover' | 'click';
-  options: string[];
+  options: (string | number)[];
   children?: React.ReactNode;
 }
 
@@ -17,14 +19,13 @@ const DropDown: React.FC<DropDownProps> = ({ options, type }) => {
   const [dropDownFocusOn, dropDownFocusOff, dropDownToggle] = useToggleDropDown(
     isOpen,
     setIsOpen,
-    dropContent,
-    setSelectedOption
+    dropContent
   );
 
   return (
     <div
       ref={dropContent}
-      className="dropDown"
+      className={st.dropDown}
       onMouseEnter={
         type === 'hover'
           ? () => {
@@ -47,23 +48,30 @@ const DropDown: React.FC<DropDownProps> = ({ options, type }) => {
           : undefined
       }
     >
-      <div className={st['dropDown__title']}>{selectedOption}</div>
+      <div className={st['dropDown__title'] + ' ' + (isOpen ? st.opened : '')}>
+        {selectedOption}
+        <BsChevronCompactDown className={st.arrowDown + ' ' + (isOpen ? st.opened : '')} />
+      </div>
       {isOpen && (
-        <ul className={st['dropDown__options']} onClick={(e) => e.stopPropagation()}>
-          {options.map((option) => (
-            <li
-              key={option}
-              onClick={(e: React.MouseEvent<HTMLLIElement>) => {
-                setIsOpen(false);
-                setSelectedOption(
-                  (e.target as HTMLLIElement).textContent as (typeof options)[number]
-                );
-              }}
-            >
-              {option}
-            </li>
-          ))}
-        </ul>
+        <div className={st['dropDown__contentWrapper']} onClick={(e) => e.stopPropagation()}>
+          <div className={st['dropDown__content']}>
+            <ul className={st['dropDown__options']}>
+              {options.map((option) => (
+                <li
+                  key={option}
+                  onClick={(e: React.MouseEvent<HTMLLIElement>) => {
+                    setIsOpen(false);
+                    setSelectedOption(
+                      (e.target as HTMLLIElement).textContent as (typeof options)[number]
+                    );
+                  }}
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       )}
     </div>
   );
